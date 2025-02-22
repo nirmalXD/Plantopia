@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Plantopia - Explore Plants, Detect Diseases, & Find Nearby Nurseries</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/icon.webp')}}" type="image/gif" sizes="16x16">
+    <!-- CSS Files
+    ================================================== -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="{{ url_for('static', filename='css/plugins.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/coloring.css')}}" rel="stylesheet" type="text/css">
+    <!-- color scheme -->
+    <link id="colors" href="{{ url_for('static', filename='css/scheme-01.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/style_plantindex.css')}}" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <!-- preloader begin -->
+        <!-- <div id="de-loader"></div> -->
+        <!-- preloader end -->
+
+        <!-- header begin -->
+
+        <header class="transparent">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="{{ url_for('index')}}">
+                                        <img class="logo-main" src="{{ url_for('static', filename='images/logo-white.png')}}" alt="">
+                                        <img class="logo-mobile" src="{{ url_for('static', filename='images/logo-white.png')}}" alt="">
+                                    </a>
+                                </div>
+                                <!-- logo end -->
+                            </div>
+                            
+                            <div class="de-flex-col">
+                                <div class="menu_side_area">
+                                    <a href="{{ url_for('index')}}" class="btn-main btn-line">Home</a>
+                                    <span id="menu-btn"></span>
+                                </div>
+
+                                <div id="btn-extra">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header end -->
+        <!-- content begin -->
+        <div class="no-bottom no-top" id="content">
+            <div id="top"></div>
+
+            <!--<div class="de_ribbon d-ribbon wow fadeInDown animated" data-wow-delay="1.5s">SAVE 50%</div>-->
+
+
+            
+            <section id="section-hero" class="section-dark text-light bg-dark-1 jarallax" aria-label="section">
+                <img src="{{ url_for('static', filename='images/bg.webp')}}" class="jarallax-img" alt="">
+                <div class="container relative z-2">
+                    <div class="row g-4 gx-5 align-items-center">
+
+                        <!-- <div class="spacer-20"></div> -->
+
+                        <div class="col-lg-6">
+                            <!-- <div class="subtitle s2 mb-3 wow fadeInUp">Made by Elite Author</div>   -->
+                            <h2 class="text-uppercase wow fadeInUp"><span id="pi">Plant Disease Detection</span></h2>
+                            <!-- <p class="wow fadeInUp">Discover the world of plants with our extensive Plant Index, detect plant diseases instantly using AI-powered machine learning, and locate the best nurseries near you - all in one place. </p>
+
+                            <a class="btn-main wow fadeInUp" href="#section-preview">Show</a> -->
+                        </div>
+
+                        <!-- <div class="col-lg-6">
+                            <div class="py-5">
+                                <div class="de-images-stack">
+                                    <img src="images/m1.jpg" class="di-1 rounded-1 wow fadeIn" data-wow-delay=".9s"
+                                        alt="">
+                                    <img src="images/m2.jpg" class="di-2 rounded-1 wow fadeIn" data-wow-delay=".6s"
+                                        alt="">
+                                    <img src="images/m3.jpg" class="di-3 rounded-1 wow fadeIn" data-wow-delay=".3s"
+                                        alt="">
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                </div>
+
+                <div class="de-overlay"></div>
+            </section>
+
+
+            <section id="section-preview" class="bg-light">
+                <div class="container relative">
+                    <!-- <div class="row g-6 justify-content-center mb-2">
+                        <div class="col-lg-8 text-center">
+                            <h2 class="text-uppercase wow fadeInUp" data-wow-delay=".2s">Plant Disease Detection</h2>
+                        </div>
+                    </div> -->
+
+                    <div class="row g-2">
+
+                        <div class="col-lg-6 col-md-3 text-center">
+                            <div class="p-lg-2 pt-lg-0">
+                                <input type="file" id="imageInput" accept="image/*" onchange="previewImage(event)"><br><br>
+                            <img id="imagePreview" src="" alt="Image Preview" style="max-width: 300px; display: none;margin: 0 auto;"><br><br>
+                            <button onclick="uploadImage()">Upload & Predict</button>
+                            <p style="font-size: 0.9em; color: gray; margin-top: 10px;">
+                                Disclaimer: The prediction results are based on a model trained on 38 classes of plant diseases.
+                                Other plant diseases may not be accurately predicted.
+                            </p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-3 text-center">
+                            <div class="p-lg-2 pt-lg-0">
+                                <div id="result"></div>
+                            </div>
+                        </div>
+
+                        
+                        <!-- <div class="container">
+                            <input type="file" id="imageInput" accept="image/*" onchange="previewImage(event)">
+                            <br><br>
+                            <img id="imagePreview" src="" alt="Image Preview" style="max-width: 300px; display: none;">
+                            <br><br>
+                            <button onclick="uploadImage()">Upload & Predict</button>
+                            <div id="result"></div>
+                        </div>
+
+                        <div class="container">
+                            <input type="file" id="imageInput" accept="image/*" onchange="previewImage(event)">
+                            <br><br>
+                            <img id="imagePreview" src="" alt="Image Preview" style="max-width: 300px; display: none;">
+                            <br><br>
+                            <button onclick="uploadImage()">Upload & Predict</button>
+                            <div id="result"></div>
+                        </div> -->
+                        
+                        <script>
+                        function previewImage(event) {
+                            const input = event.target;
+                            const preview = document.getElementById('imagePreview');
+                        
+                            if (input.files && input.files[0]) {
+                                const reader = new FileReader();
+                        
+                                reader.onload = function(e) {
+                                    preview.src = e.target.result;
+                                    preview.style.display = 'block';
+                                };
+                        
+                                reader.readAsDataURL(input.files[0]);
+                            }
+                        }
+                        </script>
+                        
+                    
+                        <script src="{{ url_for('static', filename='script.js') }}"></script>
+                        
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- content end -->
+
+        <!-- footer begin -->
+        <footer class="section-dark">
+            <div class="container relative z-2">
+                <div class="row gx-5">
+                    <div class="col-lg-6 col-sm-6">
+                        <img src="{{ url_for('static', filename='images/logo-white.png')}}" class="w-150px" alt="">
+                        <div class="spacer-20"></div>
+                        <p>Plantopia is your all-in-one platform for plant lovers! Explore our Plant Index for detailed plant care information, use AI-powered disease detection, and find nearby nurseries with ease. Our mission is to make plant care simple, accessible, and sustainable. Bringing nature closer to you!</p>
+
+                        <div class="social-icons mb-sm-30">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-6">
+                        
+                    </div>
+                    
+                    
+                    <div class="col-lg-4 col-sm-6 order-lg-2 order-sm-1">
+                        <div class="widget">
+                            <div class="fw-bold text-white"><i class="icofont-clock-time me-2 id-color-2"></i>We're Open
+                            </div>
+                            Monday - Friday 08.00 - 18.00
+
+                            <div class="spacer-20"></div>
+
+                            <div class="fw-bold text-white"><i class="icofont-location-pin me-2 id-color-2"></i>Office
+                                Location</div>
+                            Ahmedabad
+
+                            <div class="spacer-20"></div>
+
+                            <div class="fw-bold text-white"><i class="icofont-envelope me-2 id-color-2"></i>Send a
+                                Message</div>
+                            contact@plantopia.com
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <img src="{{ url_for('static', filename='images/silhuette-1-black.webp')}}" class="abs bottom-0 op-3" alt="">
+        </footer>
+        
+        </div>
+        <!-- footer end -->
+        
+    </div>
+
+    <!-- overlay content begin -->
+    <div id="extra-wrap" class="text-light">
+        <div id="btn-close">
+            <span></span>
+            <span></span>
+        </div>
+
+        <div id="extra-content">
+            <img src="{{ url_for('static', filename='images/logo-white.png')}}" class="w-150px" alt="">
+
+            <!-- <div class="spacer-30-line"></div> -->
+
+            <!-- <h5>Our Services</h5>
+            <ul class="no-style">
+                <li><a href="service-single">Garden Design</a></li>
+                <li><a href="service-single.html">Garden Maintenance</a></li>
+                <li><a href="service-single.html">Planting Services</a></li>
+                <li><a href="service-single.html">Tree Care</a></li>
+                <li><a href="service-single.html">Irrigation Services</a></li>
+                <li><a href="service-single.html">Specialty Services</a></li>
+            </ul> -->
+
+            <!-- <div class="spacer-30-line"></div> -->
+
+            <!-- <h5>Contact Us</h5>
+            <div><i class="icofont-clock-time me-2 op-5"></i>Monday - Friday 08.00 - 18.00</div>
+            <div><i class="icofont-location-pin me-2 op-5"></i>Ahmedabad</div>
+            <div><i class="icofont-envelope me-2 op-5"></i>contact@plantopia.com</div> -->
+
+             <div class="spacer-30-line"></div>
+
+            <h5>About Us</h5>
+            <p>Plantopia is your all-in-one platform for plant lovers! Explore our Plant Index for detailed plant care information, use AI-powered disease detection, and find nearby nurseries with ease. Our mission is to make plant care simple, accessible, and sustainable. Bringing nature closer to you!</p>
+
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- overlay content end -->
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="{{ url_for('static', filename='js/plugins.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/designesia.js')}}"></script>
+
+
+
+</body>
+
+</html>

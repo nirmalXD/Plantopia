@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Plantopia - Explore Plants, Detect Diseases, & Find Nearby Nurseries</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/icon.webp')}}" type="image/gif" sizes="16x16">
+    <!-- CSS Files
+    ================================================== -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="{{ url_for('static', filename='css/plugins.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/coloring.css')}}" rel="stylesheet" type="text/css">
+    <!-- color scheme -->
+    <link id="colors" href="{{ url_for('static', filename='css/scheme-01.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/style_plantindex.css')}}" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <!-- preloader begin -->
+        <!-- <div id="de-loader"></div> -->
+        <!-- preloader end -->
+
+        <!-- header begin -->
+
+        <header class="transparent">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="{{ url_for('index')}}">
+                                        <img class="logo-main" src="{{ url_for('static', filename='images/logo-white.png')}}" alt="">
+                                        <img class="logo-mobile" src="{{ url_for('static', filename='images/logo-white.png')}}" alt="">
+                                    </a>
+                                </div>
+                                <!-- logo end -->
+                            </div>
+
+                            <div class="de-flex-col">
+                                <div class="menu_side_area">
+                                    <a href="{{ url_for('index')}}" class="btn-main btn-line">Home</a>
+                                    <span id="menu-btn"></span>
+                                </div>
+
+                                <div id="btn-extra">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header end -->
+        <!-- content begin -->
+        <div class="no-bottom no-top" id="content">
+            <div id="top"></div>
+
+            <!--<div class="de_ribbon d-ribbon wow fadeInDown animated" data-wow-delay="1.5s">SAVE 50%</div>-->
+
+
+
+            <section id="section-hero" class="section-dark text-light bg-dark-1 jarallax" aria-label="section">
+                <img src="{{ url_for('static', filename='images/c1_max.jpg')}}" class="jarallax-img" alt="">
+                <div class="container relative z-2">
+                    <div class="row g-4 gx-5 align-items-center">
+
+                        <!-- <div class="spacer-20"></div> -->
+
+                        <div class="col-lg-6">
+                            <!-- <div class="subtitle s2 mb-3 wow fadeInUp">Made by Elite Author</div>   -->
+                            <h2 class="text-uppercase wow fadeInUp"><span id="pi">Bamboos, Grasses & Grass like
+                                    plants</span></h2>
+                            <!-- <p class="wow fadeInUp">Discover the world of plants with our extensive Plant Index, detect plant diseases instantly using AI-powered machine learning, and locate the best nurseries near you - all in one place. </p>
+
+                            <a class="btn-main wow fadeInUp" href="#section-preview">Show</a> -->
+                        </div>
+
+                        <!-- <div class="col-lg-6">
+                            <div class="py-5">
+                                <div class="de-images-stack">
+                                    <img src="images/m1.jpg" class="di-1 rounded-1 wow fadeIn" data-wow-delay=".9s"
+                                        alt="">
+                                    <img src="images/m2.jpg" class="di-2 rounded-1 wow fadeIn" data-wow-delay=".6s"
+                                        alt="">
+                                    <img src="images/m3.jpg" class="di-3 rounded-1 wow fadeIn" data-wow-delay=".3s"
+                                        alt="">
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                </div>
+
+                <div class="de-overlay"></div>
+            </section>
+
+            <section class="index-container">
+                <div class="container">
+
+                    <h3>Browse Plant Type Aplhabetically</h3>
+
+                    <div class="jump-to">Jump to:</div>
+
+                    <ul class="letter-index">
+                        <li class="plant-section glossary-section" data-id="section-A">A</li>
+                        <li class="plant-section glossary-section" data-id="section-B">B</li>
+                        <li class="plant-section glossary-section" data-id="section-C">C</li>
+                        <li class="plant-section glossary-section" data-id="section-D">D</li>
+                        <li class="plant-section glossary-section" data-id="section-E">E</li>
+                        <li class="plant-section glossary-section" data-id="section-F">F</li>
+                        <li class="plant-section glossary-section" data-id="section-G">G</li>
+                        <li class="plant-section glossary-section" data-id="section-H">H</li>
+                        <li class="plant-section glossary-section" data-id="section-I">I</li>
+                        <li class="plant-section glossary-section" data-id="section-J">J</li>
+                        <li class="plant-section glossary-section" data-id="section-K">K</li>
+                        <li class="plant-section glossary-section" data-id="section-L">L</li>
+                        <li class="plant-section glossary-section" data-id="section-M">M</li>
+                        <li class="plant-section glossary-section" data-id="section-N">N</li>
+                        <li class="plant-section glossary-section" data-id="section-O">O</li>
+                        <li class="plant-section glossary-section" data-id="section-P">P</li>
+                        <li class="plant-section glossary-section" data-id="section-Q">Q</li>
+                        <li class="plant-section glossary-section" data-id="section-R">R</li>
+                        <li class="plant-section glossary-section" data-id="section-S">S</li>
+                        <li class="plant-section glossary-section" data-id="section-T">T</li>
+                        <li class="plant-section glossary-section" data-id="section-U">U</li>
+                        <li class="plant-section glossary-section" data-id="section-V">V</li>
+                        <li class="plant-section glossary-section" data-id="section-W">W</li>
+                        <li class="plant-section glossary-section" data-id="section-X">X</li>
+                        <li class="plant-section glossary-section" data-id="section-Y">Y</li>
+                        <li class="plant-section glossary-section" data-id="section-Z">Z</li>
+                    </ul>
+
+                </div>
+
+            </section>
+            <div class="container with-sidebar">
+
+                <!-- main content area -->
+                <div class="page-content">
+                    <!-- section header -->
+                    <div class="letter-header" id="section-A">A</div>
+                    <!-- section content -->
+                    <ul class="plant-index">
+                        <li>
+                            <a href="/plant-type/african-daisy/">African Daisy</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/ageratum/">Ageratum</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/alyssum/">Alyssum</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/amaranth/">Amaranth</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/anemone/">Anemone</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/angelonia/">Angelonia</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/anise/">Anise</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/anna-apple/">Anna Apple</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/apple/">Apple</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/apricot/">Apricot</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/armenian-cucumber/">Armenian Cucumber</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/artichoke/">Artichoke</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/arugula/">Arugula</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/asian-pear/">Asian Pear</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/asparagus/">Asparagus</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/asparagus-bean/">Asparagus Bean</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/aster/">Aster</a>
+                        </li>
+                    </ul>
+
+                    <!-- section header -->
+                    <div class="letter-header" id="section-B">B</div>
+                    <!-- section content -->
+                    <ul class="plant-index">
+                        <li>
+                            <a href="/plant-type/babys-breath/">Baby’s Breath</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/basil/">Basil</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/bay-laurel/">Bay Laurel</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/bean-borlotti/">Bean (Borlotti)</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/bean-bush-and-pole/">Bean (Bush &amp; Pole)</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/bean-tepary/">Bean (Tepary)</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/bean-yardlong/">Bean (Yardlong)</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/bee-balm/">Bee Balm</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/beet/">Beet</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/begonia/">Begonia</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/bells-of-ireland/">Bell’s of Ireland</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/bigelows-purple-aster/">Bigelow’s Purple Aster</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/black-eyed-pea/">Black-eyed Pea</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/black-eyed-susan-vine/">Black-Eyed Susan Vine</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/blackberry/">Blackberry</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/blue-salvia/">Blue Salvia</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/bok-choy/">Bok Choy</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/borage/">Borage</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/bougainvillea/">Bougainvillea</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/broccoli/">Broccoli</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/brussels-sprouts/">Brussels Sprouts</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/buckwheat/">Buckwheat</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/butternut-squash/">Butternut Squash</a>
+                        </li>
+                    </ul>
+
+                    <!-- section header -->
+                    <div class="letter-header" id="section-C">C</div>
+                    <!-- section content -->
+                    <ul class="plant-index">
+                        <li>
+                            <a href="/plant-type/cabbage/">Cabbage</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/calendula/">Calendula</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/campanula/">Campanula</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/canary-creeper-vine/">Canary Creeper Vine</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/cantaloupe/">Cantaloupe</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/cape-honeysuckle/">Cape Honeysuckle</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/cardinal-climber-vine/">Cardinal Climber Vine</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/carnation/">Carnation</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/carolina-jasmine/">Carolina Jasmine</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/carrot/">Carrot</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/catnip/">Catnip</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/cats-claw-vine/">Cat’s Claw Vine</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/cauliflower/">Cauliflower</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/celery/">Celery</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/celosia/">Celosia</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/chamomile/">Chamomile</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/cherry/">Cherry</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/chichiquelite/">Chichiquelite</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/chives/">Chives</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/chrysanthemum/">Chrysanthemum</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/cilantro/">Cilantro</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/citrus/">Citrus</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/clarkia/">Clarkia</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/climbing-roses/">Climbing Roses</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/coleus/">Coleus</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/collard-greens/">Collard Greens</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/comfrey/">Comfrey</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/coral-vine/">Coral Vine</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/coreopsis/">Coreopsis</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/corn/">Corn</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/cornflower/">Cornflower</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/cosmos/">Cosmos</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/creeping-fig/">Creeping Fig</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/creeping-zinnia/">Creeping Zinnia</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/cucamelon/">Cucamelon</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/cucumber/">Cucumber</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/cucuzza-gourd/">Cucuzza Gourd</a>
+                        </li>
+                    </ul>
+
+                    <!-- section header -->
+                    <div class="letter-header" id="section-D">D</div>
+                    <!-- section content -->
+                    <ul class="plant-index">
+                        <li>
+                            <a href="/plant-type/dahlia/">Dahlia</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/dara/">Dara</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/date/">Date</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/delphinium/">Delphinium</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/dianthus/">Dianthus</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/dill/">Dill</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/dusty-miller/">Dusty Miller</a>
+                        </li>
+                    </ul>
+
+                    <!-- section header -->
+                    <div class="letter-header" id="section-E">E</div>
+                    <!-- section content -->
+                    <ul class="plant-index">
+                        <li>
+                            <a href="/plant-type/echinacea/">Echinacea</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/eggplant/">Eggplant</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/english-daisy/">English Daisy</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/evening-primrose/">Evening Primrose</a>
+                        </li>
+                    </ul>
+
+                    <!-- section header -->
+                    <div class="letter-header" id="section-F">F</div>
+                    <!-- section content -->
+                    <ul class="plant-index">
+                        <li>
+                            <a href="/plant-type/fava-bean/">Fava Bean</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/fennel/">Fennel</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/feverfew/">Feverfew</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/fig/">Fig</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/flax/">Flax</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/forget-me-not/">Forget-Me-Not</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/four-oclock/">Four O’Clock</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/foxglove/">Foxglove</a>
+                        </li>
+                    </ul>
+
+                    <!-- section header -->
+                    <div class="letter-header" id="section-G">G</div>
+                    <!-- section content -->
+                    <ul class="plant-index">
+                        <li>
+                            <a href="/plant-type/gaillardia/">Gaillardia</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/garbanzo-beans/">Garbanzo Beans</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/garlic/">Garlic</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/garlic-chives/">Garlic Chives</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/gazania/">Gazania</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/geranium/">Geranium</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/ginger/">Ginger</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/globe-mallow/">Globe Mallow</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/goji-berry/">Goji Berry</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/gomphrena/">Gomphrena (Globe Amaranth)</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/grape-ivy/">Grape Ivy (Arizona)</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/grapes/">Grapes</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/ground-cherry/">Ground Cherry</a>
+                        </li>
+                    </ul>
+
+                    <!-- section header -->
+                    <div class="letter-header" id="section-H">H</div>
+                    <!-- section content -->
+                    <ul class="plant-index">
+                        <li>
+                            <a href="/plant-type/hollyhock/">Hollyhock</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/hyacinth/">Hyacinth</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/hyssop/">Hyssop</a>
+                        </li>
+                    </ul>
+
+                    <!-- section header -->
+                    <div class="letter-header" id="section-I">I</div>
+                    <!-- section content -->
+                    <ul class="plant-index">
+                        <li>
+                            <a href="/plant-type/impatiens/">Impatiens</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/iitoi-onions/">I’itoi Onions</a>
+                        </li>
+                    </ul>
+
+                    <!-- section header -->
+                    <div class="letter-header" id="section-J">J</div>
+                    <!-- section content -->
+                    <ul class="plant-index">
+                        <li>
+                            <a href="/plant-type/jerusalem-artichoke/">Jerusalem Artichoke</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/jicama/">Jicama</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/jujube/">Jujube</a>
+                        </li>
+                    </ul>
+
+                    <!-- section header -->
+                    <div class="letter-header" id="section-K">K</div>
+                    <!-- section content -->
+                    <ul class="plant-index">
+                        <li>
+                            <a href="/plant-type/kale/">Kale</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/kohlrabi/">Kohlrabi</a>
+                        </li>
+                    </ul>
+
+                    <!-- section header -->
+                    <div class="letter-header" id="section-L">L</div>
+                    <!-- section content -->
+                    <ul class="plant-index">
+                        <li>
+                            <a href="/plant-type/lady-banks-rose/">Lady Bank’s Rose</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/larkspur/">Larkspur</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/lavender/">Lavender</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/lavender-star-flower/">Lavender Star Flower</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/leeks/">Leeks</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/lemon-balm/">Lemon Balm</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/lemon-grass/">Lemon Grass</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/lemon-verbena/">Lemon Verbena</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/lentil/">Lentil</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/lettuce-endive/">Lettuce/Endive</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/lilac-vine/">Lilac Vine</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/linaria/">Linaria</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/lisianthus/">Lisianthus</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/lobelia/">Lobelia</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/love-in-a-puff-vine/">Love in a Puff Vine</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/luffa/">Luffa</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/lupine/">Lupine</a>
+                        </li>
+                    </ul>
+
+                    <!-- section header -->
+                    <div class="letter-header" id="section-M">M</div>
+                    <!-- section content -->
+                    <ul class="plant-index">
+                        <li>
+                            <a href="/plant-type/mahogany-splendor/">Mahogany Splendor</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/malabar-spinach/">Malabar Spinach</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/marigold/">Marigold</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/marjoram/">Marjoram</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/mint/">Mint</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/morning-glory-vine/">Morning Glory Vine</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/mulberry/">Mulberry</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/mustard/">Mustard</a>
+                        </li>
+                    </ul>
+
+                    <!-- section header -->
+                    <div class="letter-header" id="section-N">N</div>
+                    <!-- section content -->
+                    <ul class="plant-index">
+                        <li>
+                            <a href="/plant-type/nasturtium/">Nasturtium</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/nigella/">Nigella</a>
+                        </li>
+                    </ul>
+
+                    <!-- section header -->
+                    <div class="letter-header" id="section-O">O</div>
+                    <!-- section content -->
+                    <ul class="plant-index">
+                        <li>
+                            <a href="/plant-type/okra/">Okra</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/onions-bulb/">Onions (bulb)</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/onions-green/">Onions-(green)</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/oranges/">Oranges</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/oregano/">Oregano</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/ornamental-cabbage-and-kale/">Ornamental Cabbage &amp; Kale</a>
+                        </li>
+                    </ul>
+
+                    <!-- section header -->
+                    <div class="letter-header" id="section-P">P</div>
+                    <!-- section content -->
+                    <ul class="plant-index">
+                        <li>
+                            <a href="/plant-type/painted-daisy/">Painted Daisy</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/pansy/">Pansy</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/papalo/">Papalo</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/parsley/">Parsley</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/parsnip/">Parsnip</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/passion-flower-vine/">Passion Flower Vine</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/patty-pan-squash/">Patty Pan Squash</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/peach/">Peach</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/pear/">Pear</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/peas/">Peas</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/pepper/">Pepper</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/persimmon/">Persimmon</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/petunia/">Petunia</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/phlox/">Phlox</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/pineapple-guava/">Pineapple Guava</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/pink-trumpet-vine/">Pink Trumpet Vine</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/plum/">Plum</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/poblano-pepper/">Poblano Pepper</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/pomegranate/">Pomegranate</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/poppy/">Poppy</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/portulaca/">Portulaca</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/potato/">Potato</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/potato-vine/">Potato Vine</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/pumpkin/">Pumpkin</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/purple-hyacinth-bean/">Purple Hyacinth Bean</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/purslane/">Purslane</a>
+                        </li>
+                    </ul>
+
+                    <!-- section header -->
+                    <div class="letter-header" id="section-R">R</div>
+                    <!-- section content -->
+                    <ul class="plant-index">
+                        <li>
+                            <a href="/plant-type/radish/">Radish</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/ranunculus/">Ranunculus</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/ratibida/">Ratibida</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/red-salvia/">Red Salvia</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/roselle-hibiscus/">Roselle Hibiscus</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/rosemary/">Rosemary</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/roses/">Roses</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/rudbeckia/">Rudbeckia (Black-Eyed Susan)</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/rutabaga/">Rutabaga</a>
+                        </li>
+                    </ul>
+
+                    <!-- section header -->
+                    <div class="letter-header" id="section-S">S</div>
+                    <!-- section content -->
+                    <ul class="plant-index">
+                        <li>
+                            <a href="/plant-type/safflower/">Safflower</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/saffron-crocus/">Saffron Crocus</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/sage/">Sage</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/salpiglossis-painted-tongue/">Salpiglossis (Painted Tongue)</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/savory-summer/">Savory (Summer)</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/savory-winter/">Savory (Winter)</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/scabiosa/">Scabiosa</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/sesame/">Sesame</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/shasta-daisy/">Shasta Daisy</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/sky-flower/">Sky Flower</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/snail-vine/">Snail Vine</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/snapdragon/">Snapdragon</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/spilanthes/">Spilanthes</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/spinach/">Spinach</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/star-jasmine/">Star Jasmine</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/statice/">Statice</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/stevia/">Stevia</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/stock/">Stock</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/strawberry/">Strawberry</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/strawflower/">Strawflower</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/summer-squash/">Summer Squash</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/sunflower/">Sunflower</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/sweet-peas/">Sweet Peas</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/sweet-potato/">Sweet Potato</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/swiss-chard/">Swiss Chard</a>
+                        </li>
+                    </ul>
+
+                    <!-- section header -->
+                    <div class="letter-header" id="section-T">T</div>
+                    <!-- section content -->
+                    <ul class="plant-index">
+                        <li>
+                            <a href="/plant-type/tangerine-crossvine/">Tangerine Crossvine</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/thyme/">Thyme</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/tithonia/">Tithonia</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/tomatillos/">Tomatillos</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/tomato/">Tomato</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/toothache-plant/">Toothache Plant</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/trumpet-creeper/">Trumpet Creeper</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/tulip/">Tulip</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/turmeric/">Turmeric</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/turnip/">Turnip</a>
+                        </li>
+                    </ul>
+
+                    <!-- section header -->
+                    <div class="letter-header" id="section-V">V</div>
+                    <!-- section content -->
+                    <ul class="plant-index">
+                        <li>
+                            <a href="/plant-type/verbena/">Verbena</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/vinca/">Vinca</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/viola/">Viola</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/violet/">Violet</a>
+                        </li>
+                    </ul>
+
+                    <!-- section header -->
+                    <div class="letter-header" id="section-W">W</div>
+                    <!-- section content -->
+                    <ul class="plant-index">
+                        <li>
+                            <a href="/plant-type/watermelon/">Watermelon</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/wildflower/">Wildflower</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/winter-squash/">Winter Squash</a>
+                        </li>
+                    </ul>
+
+                    <!-- section header -->
+                    <div class="letter-header" id="section-Y">Y</div>
+                    <!-- section content -->
+                    <ul class="plant-index">
+                        <li>
+                            <a href="/plant-type/yarrow/">Yarrow</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/yellow-orchid-vine/">Yellow Orchid Vine</a>
+                        </li>
+                    </ul>
+
+                    <!-- section header -->
+                    <div class="letter-header" id="section-Z">Z</div>
+                    <!-- section content -->
+                    <ul class="plant-index">
+                        <li>
+                            <a href="/plant-type/zinnia/">Zinnia</a>
+                        </li>
+                        <li>
+                            <a href="/plant-type/zucchini/">Zucchini</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+            </div>
+            <!-- <section id="section-preview" class="bg-light">
+                <div class="container relative">
+                    <div class="row g-4 justify-content-center mb-2">
+                        <div class="col-lg-6 text-center">
+                            <h2 class="text-uppercase wow fadeInUp" data-wow-delay=".2s">Category
+                        </div>
+                    </div> -->
+
+            <!-- <div class="row g-4">
+
+                        
+                        <div class="col-lg-3 col-md-3 text-center">
+                            <div class="p-lg-2 pt-lg-0">
+                                <a class="d_demo_img wow" target="_blank" href="index.html">
+                                    <span class="d-overlay"></span>
+                                    <img src="images/c1.jpg" class="color img-fluid wow " alt="">
+                                </a>
+                                <h4 class="s2">Bamboos, Grasses & Grass like plants</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 text-center">
+                            <div class="p-lg-2 pt-lg-0">
+                                <a class="d_demo_img wow" target="_blank" href="index.html">
+                                    <span class="d-overlay"></span>
+                                    <img src="images/c2.jpg" class="color img-fluid wow " alt="">
+                                </a>
+                                <h4 class="s2">Bromeliads</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 text-center">
+                            <div class="p-lg-2 pt-lg-0">
+                                <a class="d_demo_img wow" target="_blank" href="index.html">
+                                    <span class="d-overlay"></span>
+                                    <img src="images/c3.jpg" class="color img-fluid wow " alt="">
+                                </a>
+                                <h4 class="s2">Cacti & Succulents</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 text-center">
+                            <div class="p-lg-2 pt-lg-0">
+                                <a class="d_demo_img wow" target="_blank" href="index.html">
+                                    <span class="d-overlay"></span>
+                                    <img src="images/c4.jpg" class="color img-fluid wow " alt="">
+                                </a>
+                                <h4 class="s2">Climbers, Creepers & Vines</h4>
+                            </div>
+                        </div>
+                    </div> -->
+            <!-- </div>
+            </section> -->
+        </div>
+        <!-- content end -->
+
+        <!-- footer begin -->
+        <footer class="section-dark">
+            <div class="container relative z-2">
+                <div class="row gx-5">
+                    <div class="col-lg-6 col-sm-6">
+                        <img src="{{ url_for('static', filename='images/logo-white.png')}}" class="w-150px" alt="">
+                        <div class="spacer-20"></div>
+                        <p>Plantopia is your all-in-one platform for plant lovers! Explore our Plant Index for detailed
+                            plant care information, use AI-powered disease detection, and find nearby nurseries with
+                            ease. Our mission is to make plant care simple, accessible, and sustainable. Bringing nature
+                            closer to you!</p>
+
+                        <div class="social-icons mb-sm-30">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-6">
+
+                    </div>
+
+
+                    <div class="col-lg-4 col-sm-6 order-lg-2 order-sm-1">
+                        <div class="widget">
+                            <div class="fw-bold text-white"><i class="icofont-clock-time me-2 id-color-2"></i>We're Open
+                            </div>
+                            Monday - Friday 08.00 - 18.00
+
+                            <div class="spacer-20"></div>
+
+                            <div class="fw-bold text-white"><i class="icofont-location-pin me-2 id-color-2"></i>Office
+                                Location</div>
+                            Ahmedabad
+
+                            <div class="spacer-20"></div>
+
+                            <div class="fw-bold text-white"><i class="icofont-envelope me-2 id-color-2"></i>Send a
+                                Message</div>
+                            contact@plantopia.com
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="{{ url_for('static', filename='images/silhuette-1-black.webp')}}" class="abs bottom-0 op-3" alt="">
+        </footer>
+
+    </div>
+    <!-- footer end -->
+
+    </div>
+
+    <!-- overlay content begin -->
+    <div id="extra-wrap" class="text-light">
+        <div id="btn-close">
+            <span></span>
+            <span></span>
+        </div>
+
+        <div id="extra-content">
+            <img src="{{ url_for('static', filename='images/logo-white.png')}}" class="w-150px" alt="">
+
+            <!-- <div class="spacer-30-line"></div> -->
+
+            <!-- <h5>Our Services</h5>
+            <ul class="no-style">
+                <li><a href="service-single.html">Garden Design</a></li>
+                <li><a href="service-single.html">Garden Maintenance</a></li>
+                <li><a href="service-single.html">Planting Services</a></li>
+                <li><a href="service-single.html">Tree Care</a></li>
+                <li><a href="service-single.html">Irrigation Services</a></li>
+                <li><a href="service-single.html">Specialty Services</a></li>
+            </ul> -->
+
+            <!-- <div class="spacer-30-line"></div> -->
+
+            <!-- <h5>Contact Us</h5>
+            <div><i class="icofont-clock-time me-2 op-5"></i>Monday - Friday 08.00 - 18.00</div>
+            <div><i class="icofont-location-pin me-2 op-5"></i>Ahmedabad</div>
+            <div><i class="icofont-envelope me-2 op-5"></i>contact@plantopia.com</div> -->
+
+            <div class="spacer-30-line"></div>
+
+            <h5>About Us</h5>
+            <p>Plantopia is your all-in-one platform for plant lovers! Explore our Plant Index for detailed plant care
+                information, use AI-powered disease detection, and find nearby nurseries with ease. Our mission is to
+                make plant care simple, accessible, and sustainable. Bringing nature closer to you!</p>
+
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- overlay content end -->
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="{{ url_for('static', filename='js/plugins.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/designesia.js')}}"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> jQuery CDN -->
+    <script>
+        $(document).ready(function () {
+            $(".glossary-section").click(function () {
+                let targetId = $(this).data("id");
+                let targetSection = $("#" + targetId);
+
+                if (targetSection.length) {
+                    $("html, body").animate({
+                        scrollTop: targetSection.offset().top - 100 // Adjust offset if needed
+                    }, 500);
+                }
+            });
+        });
+    </script>
+
+
+
+
+</body>
+
+</html>

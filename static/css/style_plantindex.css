@@ -1,0 +1,78 @@
+#section-preview{
+    padding: 50px 0 50px 0;
+    /* background-color: black; */
+}
+
+.index-container {
+    margin: 0 auto;
+    text-align:center;
+    padding:3rem 0;
+    border-bottom:1px solid rgba(0,0,0,.25);
+  }
+
+  .letter-index {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom:0;
+    padding: 0;
+  }
+
+  .index-container h3 {
+    font-size:2.2rem;
+    line-height:2.9rem;
+    font-family: var(--serif-font);
+    font-weight:500;
+    margin-bottom:var(--body-font-size);
+  }
+
+  
+  .letter-header {
+    font-size:2.2rem;
+    line-height:2.9rem;
+    font-family: var(--serif-font);
+    font-weight:400;
+    width:100%;
+    position:relative;
+    text-align: left;
+    margin-bottom: 3rem;
+  }
+  
+  .letter-header:after {
+    content:"";
+    height:1px;
+    width:calc(100% - 3rem);
+    left:3rem;
+    background-color:var(--secondary-color);
+    position: absolute;
+    top:14px;
+  }
+
+  .plant-index {
+    display:flex;
+    justify-content:flex-start;
+    list-style:none;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+  
+  .plant-index li {
+    width:100%;
+    max-width:24%;
+    margin-bottom:1rem;
+  }
+  
+  .plant-index li a {
+    /* text-transform: uppercase; */
+    font-weight:700;
+    /* font-size:1.6rem; */
+    line-height:2.2rem;
+    color:var(--secondary-color);
+    text-decoration: none;
+    padding:1rem 0;
+  }
+  
+  .plant-index li a:hover {
+    color:var(--primary-color);
+  }
